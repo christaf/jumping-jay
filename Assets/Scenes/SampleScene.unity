@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5cbcb8e51eeed44ab05bcb864dead1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRigidBody: {fileID: 369904203}
+  birdRigidBody: {fileID: 369904203}
   logicScript: {fileID: 2004392047}
   isAlive: 0
 --- !u!1 &519420028
@@ -787,8 +787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -317.88513, y: -145.11487}
-  m_SizeDelta: {x: 182.2297, y: 52.2297}
+  m_AnchoredPosition: {x: -728.2318, y: -315.79263}
+  m_SizeDelta: {x: 295.7661, y: 139.8149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808033568
 MonoBehaviour:
@@ -812,12 +812,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 37
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 232
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
