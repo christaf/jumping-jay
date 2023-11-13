@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PipeSpawnerScript : MonoBehaviour
@@ -7,7 +5,7 @@ public class PipeSpawnerScript : MonoBehaviour
     
     public GameObject pipe;
     public float spawnRate = 2f;
-    private float _timer = 0f;
+    private float _timer;
     // Start is called before the first frame update
     void Start()
     {
