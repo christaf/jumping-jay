@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Pipes
+    uniqueID: 303349447
+    locked: 0
+  - name: Bird
+    uniqueID: 3427816945
+    locked: 0
+  - name: Background
+    uniqueID: 101841225
+    locked: 0

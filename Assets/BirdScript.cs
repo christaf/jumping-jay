@@ -69,7 +69,7 @@ public class BirdScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name == "BottomPipe" || col.gameObject.name == "TopPipe")
+        if (col.gameObject.name is "BottomPipe" or "TopPipe")
         {
             logicScript.GameOver();
             isAlive = false;
