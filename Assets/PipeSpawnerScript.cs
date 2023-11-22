@@ -15,6 +15,7 @@ public class PipeSpawnerScript : MonoBehaviour
     void SpawnPipe(float range = 2f)
     {
         Instantiate(pipe, transform.position + new Vector3(0, Random.Range(-range, range), 0), transform.rotation);
+
     }
 
     // Update is called once per frame

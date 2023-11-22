@@ -37,7 +37,7 @@ public class BirdScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            birdRigidBody.velocity = Vector2.right * 2;
+            birdRigidBody.velocity = Vector2.right * 4;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
