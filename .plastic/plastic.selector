@@ -1,0 +1,4 @@
+repository "jumping-jayPGK@manti12345@cloud"
+  path "/"
+    br "/main"
+    co "/main"
