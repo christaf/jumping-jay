@@ -7,7 +7,29 @@ public class LogicScript : MonoBehaviour
     private Camera _mainCamera;
     public int playerScore;
     public Text scoreText;
+    public Text highScoreText;
     public GameObject gameOverScreen;
+
+    private const string highscoreKey = "BestScore";
+
+    public bool SaveHighscore(int score)
+        {
+            int currentHighscore = LoadHighscore();
+
+            if (score > currentHighscore)
+            {
+                PlayerPrefs.SetInt(highscoreKey, score);
+                PlayerPrefs.Save();
+                return true;
+            }
+            return false;
+        }
+
+        public int LoadHighscore()
+        {
+            return PlayerPrefs.GetInt(highscoreKey, 0);
+        }
+
 
     private void GetCameraEdgesCoordinates()
     {
@@ -28,19 +50,19 @@ public class LogicScript : MonoBehaviour
         float cameraTopEdge = cameraY + cameraHeight / 2;
         float cameraBottomEdge = cameraY - cameraHeight / 2;
 
-        Debug.Log("Left Edge: " + cameraLeftEdge);
-        Debug.Log("Right Edge: " + cameraRightEdge);
-        Debug.Log("Top Edge: " + cameraTopEdge);
-        Debug.Log("Bottom Edge: " + cameraBottomEdge);
+//         Debug.Log("Left Edge: " + cameraLeftEdge);
+//         Debug.Log("Right Edge: " + cameraRightEdge);
+//         Debug.Log("Top Edge: " + cameraTopEdge);
+//         Debug.Log("Bottom Edge: " + cameraBottomEdge);
     }
     private void Start()
     {
         _mainCamera = Camera.main;
 
-        // Call this method to get and print the coordinates of camera edges
         GetCameraEdgesCoordinates();
         ResetScore();
         gameOverScreen.SetActive(false);
+        highScoreText.text = "Best score: " + LoadHighscore().ToString();
     }
     
     [ContextMenu("Add Score")]
@@ -63,12 +85,19 @@ public class LogicScript : MonoBehaviour
         ResetScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("Restart Game");
-        // Application.LoadLevel(Application.loadedLevel);
     }
     public void GameOver()
     {
+        if(SaveHighscore(playerScore)){
+            SceneManager.LoadScene("HighscoreScene");
+        };
+
         gameOverScreen.SetActive(true);
         Debug.Log("Game Over");
+    }
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 
 }
